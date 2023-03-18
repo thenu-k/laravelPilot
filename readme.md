@@ -13,3 +13,4 @@ Creating a controller for the model:
     the 'Accept' : 'application/json' header
     to automatically create multiple routes for the controller we use create a resource route
     to view the routes we use php artisan route:list
+    when using the update route, the request must be a form, and not a json request
