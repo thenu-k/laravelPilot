@@ -25,3 +25,4 @@ Adding sanctum:
         'throttle:api',
     ],
     in the user model we add 'use Lavarel\Sanctum\HasApiTokens'
+    To add a token in insomnia, we go to auth and then add a bearer token
