@@ -20,11 +20,12 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        return Product::create([
-            'name' => 'Product name',
-            'description' => 'Auto desc',
-            'price' => '99.99'
+        $request->validate([
+            'name'=>'required',
+            'price'=>'required',
+            'description'=>'required'
         ]);
+        return Product::create($request->all());
     }
 
     /**
@@ -32,7 +33,7 @@ class ProductController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return Product::find($id);
     }
 
     /**
