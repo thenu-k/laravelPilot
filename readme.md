@@ -14,3 +14,14 @@ Creating a controller for the model:
     to automatically create multiple routes for the controller we use create a resource route
     to view the routes we use php artisan route:list
     when using the update route, the request must be a form, and not a json request
+
+Adding sanctum:
+    composer reequire laravel/sanctum
+    php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
+    we'll be using sanctum middleware as we're only using this for an api
+    add this to kernel.php
+    "api" => [
+        \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
+        'throttle:api',
+    ],
+    in the user model we add 'use Lavarel\Sanctum\HasApiTokens'
